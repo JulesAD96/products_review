@@ -3,8 +3,7 @@ from rest_flex_fields import FlexFieldsModelSerializer
 from versatileimagefield.serializers import VersatileImageFieldSerializer
 
 from .models import (
-    Category, Comment, Company, CustomerReportRecord, 
-    Product, ProductSite, ProductSize
+    Category, Comment, Company, Product, ProductSite, ProductSize, Image
 )
 
 
