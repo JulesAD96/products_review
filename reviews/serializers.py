@@ -33,7 +33,7 @@ class ProductSizeSerializer(FlexFieldsModelSerializer):
 class ProductSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Product
-        fields = ['pk', 'name', 'content', 'created', 'updated']
+        fields = ['id', 'name', 'content', 'created_at', 'updated_at']
         expandable_fields = {
             'category': ('reviews.CategorySerializer', {'many': True}),
             'sites': ('reviews.ProductSiteSerializer', {'many': True}),
@@ -62,7 +62,7 @@ class UserSerializer(FlexFieldsModelSerializer):
 class CommentSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Comment
-        fields = ['pk', 'title', 'content', 'created', 'updated']
+        fields = ['pk', 'title', 'content', 'created_at', 'updated_at']
         expandable_fields = {
             'product': 'reviews.CategorySerializer',
             'user': 'reviews.UserSerializer'
