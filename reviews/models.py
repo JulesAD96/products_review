@@ -1,7 +1,5 @@
-from operator import mod
-from unicodedata import category
 from django.db import models
-
+from versatileimagefield.fields import VersatileImageField, PPOIField
 from django.contrib.auth.models import User
 
 class Company(models.Model):
@@ -65,3 +63,16 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Image(models.Model):
+    name = models.CharField(max_length=255)
+    image = VersatileImageField(
+        'Image',
+        upload_to='images/',
+        ppoi_field='image_ppoi'
+    )
+    image_ppoi = PPOIField()
+
+    def __str__(self):
+        return self.name
